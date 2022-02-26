@@ -23,7 +23,7 @@ Go to: `localhost:4085` to take a SHOT!
 
 ## Features
 
-- [ ] Sort items in gallery based on time
+- [-] Sort items in gallery based on time
 - [ ] Delete items
 
 ## Features (coming soon)
@@ -35,6 +35,6 @@ Go to: `localhost:4085` to take a SHOT!
 
 ## Gallery
 
-![send a photo!](assets/entry-page.png)
-![view your posts](assets/logs-page.png)
+![send a photo!](assets/gallery.png)
+![view your posts](assets/gallery2.png)
 
