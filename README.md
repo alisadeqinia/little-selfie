@@ -23,18 +23,19 @@ Go to: `localhost:4085` to take a SHOT!
 
 ## Features
 
-- [-] Sort items in gallery based on time
-- [ ] Delete items
+- Sort items in gallery based on time
+- Delete items
 
 ## Features (coming soon)
 
-- [ ] Add more info about selfie
-- [ ] Authentication and login
-- [ ] querying other APIs (e.g. weather)
+- Add more info about selfie
+- Authentication and login
+- querying other APIs (e.g. weather)
 
 
 ## Gallery
 
 ![send a photo!](assets/gallery.png)
+
 ![view your posts](assets/gallery2.png)
 
