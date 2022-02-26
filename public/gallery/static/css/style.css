@@ -1,0 +1,175 @@
+:root {
+    --bodyColor: #d9cff6;
+    --imageAreaColor: #5BA2D0;
+    --navbarColor: #EE8679;
+    --linkhoverColor: #5BA2D0;
+    --textColor: /* #4d4958 */ white;
+    --headerHeight: 85px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: var(--textColor);
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+body {background-color: var(--bodyColor);}
+
+/* ========================================================================= */
+/* Header area */
+header {
+    display: flex;
+    height: var(--headerHeight);
+    background-color: var(--navbarColor);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px black;
+}
+header .logo {
+    margin: 0 55px;
+    line-height: var(--headerHeight);
+    font-size: 40px;
+    float: left;
+}
+header .nav {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+}
+.nav li {
+    margin-left: 20px;
+    float: left;
+    line-height: var(--headerHeight);
+}
+.nav li a {
+    display: block;
+    transition: .1s;
+}
+.nav li:hover a {
+    transform: scale(1.2);
+}
+.nav .option-drop {
+    position: relative;
+    cursor: pointer;
+    line-height: var(--headerHeight);
+    width: 30px;
+    text-align: center;
+    float: right;
+    margin-right: 20px;
+}
+.nav .option-drop .drop-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    padding-right: 20px;
+    text-align: right;
+    line-height: 2;
+    background-color: var(--navbarColor);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    width: 150px;
+}
+.nav .option-drop .drop-content label {
+    cursor: pointer;
+}
+.nav .option-drop .drop-content .sort-option {
+    display: none;
+    padding-right: 20px;
+    font-size: 18px;
+}
+.nav .option-drop .drop-content .sort-drop:hover .sort-option {
+    display: block;
+}
+.nav .option-drop:hover .drop-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================================================= */
+/* Content box */
+#content-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--imageAreaColor);
+    width: 80%;
+    height: 80%;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 20px 20px;
+}
+#content-box div:not(.detail-box) {
+    position: relative;
+    margin: 30px 40px;
+    width: 190px;
+    background-color: white;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+#content-box div input{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    z-index: 2;
+}
+#content-box div .detail-box p {
+    color: black;
+    margin-top: 10px;
+    font-family: monospace;
+    text-align: left;
+}
+
+/* ========================================================================= */
+/* media queries */
+@media screen and (max-width: 725px) {
+    #content-box {
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+    #content-box div:not(.detail-box) {
+        width: 80%;
+        text-align: left;
+    }
+    #content-box div img {float: left;}
+    #content-box div .detail-box {
+        width: 45%;
+        float: left;
+        margin: 25px 10px;
+    }
+    #content-box div .detail-box p {font: 16px;}
+}
+
+@media screen and (max-width: 600px) {
+    header .logo {
+        margin: 0 10px;
+        font-size: 27px;
+    }
+    .nav li a {
+        font-size: 18px;
+    }
+    #content-box div:not(.detail-box) {
+        width: 190px;
+        text-align: center;
+    }
+    #content-box div img {
+        float: none;
+    }
+    #content-box div .detail-box {
+        background-color: red;
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,124 @@
+:root {
+    --bodyColor: #d9cff6;
+    --imageAreaColor: #5BA2D0;
+    --navbarColor: #EE8679;
+    --linkhoverColor: #5BA2D0;
+    --textColor: /* #4d4958 */ white;
+    --headerHeight: 85px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    color: var(--textColor);
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+body {background-color: var(--bodyColor);}
+
+/* ========================================================================= */
+/* Header area */
+header {
+    display: flex;
+    height: var(--headerHeight);
+    background-color: var(--navbarColor);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 20px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px black;
+}
+header .logo {
+    margin: 0 55px;
+    line-height: var(--headerHeight);
+    font-size: 40px;
+    float: left;
+}
+header .nav {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+}
+.nav li {
+    margin-left: 20px;
+    float: left;
+    line-height: var(--headerHeight);
+}
+.nav li a {
+    display: block;
+    transition: .1s;
+}
+.nav li:hover a {
+    transform: scale(1.2);
+}
+
+/* ========================================================================= */
+/* Camera screen */
+.camera-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 70vh;
+    background-color: var(--imageAreaColor);
+    margin: 0 auto;
+    border-radius: 0 0 20px 20px;
+}
+.camera-box button {
+    margin-top: 40px;
+    background-color: rgb(255, 145, 0);
+    width: 150px;
+    height: 45px;
+    border: 3px solid white;
+    border-radius: 20px;
+    align-self: center;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 800;
+    font-size: 17px;
+    transform: skewX(-5deg);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.9);
+}
+.camera-box::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    border-radius: 19px;
+    background-color: #4d4958;
+    top: 47px;
+    left: 50.5%;
+    transform: translate(-50%, 0);
+}
+.camera-box button:active {
+    transform: translate(.5px, 2px);
+}
+video {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5) ;
+    border-radius: 5px;
+}
+/* ========================================================================= */
+/* media queries */
+
+@media screen and (max-width: 600px) {
+    header .logo {
+        margin: 0 10px;
+        font-size: 27px;
+    }
+    .nav li a {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .camera-box {
+        width: 250px;
+    }
+    video {
+        transform: translate(-50%, -50%) scale(1.2) ;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/js/script.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>selfie gallery</title>
+</head>
+<body onload="getData()">
+    <header>
+        <ul class="nav">
+            <span class="logo">Gallery</span>
+            <li><a href="/">Camera</a></li>
+            <li><a href="https://alisadeqinia.github.io/" target="_blank">About</a></li>
+            <li class="option-drop">
+                <span>&#9776;</span>
+                <div class="drop-content">
+                    <div class="sort-drop">
+                        <span>&#9662; sort</span>
+                        <div class="sort-option">
+                            <span id="bytime">time</span>
+                        </div>
+                    </div>
+                    <span id="selection" onclick="selection()">select</span>
+                    <span id="delete-content" onclick="deleteItem()">delete</span>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <article id="content-box"></article>
+</body>
+</html>

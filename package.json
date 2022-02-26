@@ -1,0 +1,18 @@
+{
+  "name": "server-side",
+  "version": "1.0.0",
+  "description": "my first try to make a package",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "ali",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nedb": "^1.8.0"
+  }
+}
