@@ -28,7 +28,7 @@ async function getData() {
         // Set contents to DOM
         image.src = data.image;
         locationBox.innerHTML = `Longitude: ${data.longitude},`+'<br>'+`Latitude: ${data.latitude}`;
-        let time = new Date(data.timestamp).toLocaleString();
+        let time = new Date(data.timestamp).toLocaleString("en-US");
         timeBox.textContent = time;
         id.textContent = data._id;
         // Add to document
@@ -49,7 +49,7 @@ function selection() {
         }
     }
 }
-//Delete checked item
+// Delete checked item
 function deleteItem() {
     const items = document.querySelectorAll("#content-box div:not(.detail-box)");
     const ids = [];
@@ -74,4 +74,20 @@ function deleteItem() {
         .then (result => console.log(result));
         setTimeout(getData, 1000);
     }
+}
+// Sort items by time stamp
+function sortTime() {
+    const frag = document.createDocumentFragment(); // document fragment to save sorted items
+    const contentBox = document.querySelector("#content-box"); // parent of all image cards
+    const contents = contentBox.querySelectorAll("#content-box div:not(.detail-box)"); // all image cards
+    // sort by newest- first turn node list to array due to use sort() method
+    const sortedItems = [...contents].sort((a, b) => {
+        const c = a.getElementsByClassName("time").item(0).textContent,
+              d = b.getElementsByClassName("time").item(0).textContent;
+        return Date.parse(c) < Date.parse(d) ? 1 : Date.parse(c) > Date.parse(d) ? -1 : 0;
+    })
+    for (const item of sortedItems) {
+        frag.appendChild(item);
+    }
+    contentBox.appendChild(frag);
 }

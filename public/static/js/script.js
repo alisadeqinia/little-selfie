@@ -26,9 +26,9 @@ function setup() {
     
     if ('geolocation' in navigator) {
         console.log('Geolocation is on!');
-        navigator.geolocation.getCurrentPosition(position => {
-            lon = position.coords.longitude;
+        navigator.geolocation.getCurrentPosition(async position => {
             lat = position.coords.latitude;
+            lon = position.coords.longitude;
         })
     
     } else {

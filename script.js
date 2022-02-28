@@ -6,10 +6,10 @@ const app = express();
 // Initialize DB
 const dataBase = new Datastore('database.db');
 // Run API on server
-const port = process.env.PORT || 4085;
+const port = process.env.PORT || 3030;
 app.listen(port, ()=> {
     console.log('Im listening');
-    console.log('Go to: localhost:4085 and take a SHOT!');
+    console.log('Go to: localhost:3030 and take a SHOT!');
 });
 // Start DB
 dataBase.loadDatabase();
